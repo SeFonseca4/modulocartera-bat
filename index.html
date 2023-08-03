@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Modulo de Cartera</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <main>
+        <div class="container mt-5">
+          <div class="mt-3 mb-5">
+            <a class="btn-back" href=""> < Regresar</a>
+          </div>
+          <!-- Pestañas -->
+          <div class="col-12 col-md-4 col-lg-3 mb-4 shadow bg-body rounded">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item px-0" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-facturas" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                  Facturas
+                </button>
+              </li>
+              <li class="nav-item px-0" role="presentation">
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-pedidos" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                  Pedidos
+                </button>
+              </li>
+            </ul>   
+          </div>
+          <div class="row">
+            <!-- Div de la izquierda -->
+            <div class="col-12 col-md-4 col-lg-4 pt-3">
+              <!-- Contenido del div de la izquierda -->
+              <!-- Totales -->
+              <div class="border bg-white rounded-3 border-total-box border-1 py-3 px-0">
+                <div class="border-info border-start border-3">
+                  <div class="row d-flex align-items-start mb-2 justify-content-start">
+                    <div class="col-4">
+                      <div class="ps-2">
+                        <p class="mb-0 text-total">
+                          Total deuda:                  
+                        </p>                      
+                      </div>
+                    </div>
+                    <div class="col-8">
+                      <span class="bg-total-number">
+                        $ 999.999.999
+                      </span>  
+                    </div>
+                    <span class="text-date-expiration mt-2 ps-4 d-block">
+                      Fecha a vencer de la deuda: 31/12/2023
+                    </span>
+                  </div>     
+                </div>                
+                <div class="row d-flex align-items-start mb-3 mt-3">
+                  <div class="col-4">
+                    <div class="border-info border-start border-3 ps-2">
+                      <p class="mb-0 text-total">
+                        Total deuda vencida:                  
+                      </p>                    
+                    </div>                    
+                  </div>
+                  <div class="col-8">
+                    <span class="bg-total-number">
+                      $ 999.999.999
+                    </span>  
+                  </div>
+                </div>
+                <div class="row d-flex align-items-center mb-3">
+                  <div class="col-8">
+                    <div class="border-info border-start border-3 ps-2">
+                      <p class="mb-0 text-total">
+                        Nº factura pendiente de pago:                     
+                      </p>                    
+                    </div> 
+                  </div>
+                  <div class="col-4 d-flex justify-content-end pe-4">
+                    <span class="bg-total-number">
+                      60
+                    </span>  
+                  </div>
+                </div>
+                <div class="mx-auto d-flex aling-items-center justify-content-center">
+                  <button class="btn-light-blue" data-bs-toggle="modal" data-bs-target="#estado-cuenta">
+                    Solicitar estado de cuenta y certificaciones
+                    <img src="./assets/document-download.svg" alt="download">
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Div de la derecha -->
+            <div class="col-12 col-md-8 col-lg-8 full-height mb-5">
+              <!-- Contenido del div de la derecha con scroll vertical -->
+              <div class="tab-content mt-2" id="pills-tabContent">
+                <!-- Contenido Facturas  -->
+                <div class="tab-pane fade show active" id="pills-facturas" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                  <!-- Card de Facturas -->
+                  <div class="d-flex justify-content-end mb-3">
+                    <button class="text-title bg-none px-0 border border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#filtro">
+                      Ordenar por
+                      <img src="./assets/icon-filter.svg" alt="">
+                    </button>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-6 pb-5">
+                      <div class="border rounded p-3 shadow-sm bg-white">
+                        <div class="header">
+                          <div class="row d-flex justify-content-center align-items-center">
+                            <div class="col-6">
+                              <p class="tag-serie text-break text-center mb-0">
+                                Doc# WEB-440000856
+                              </p>
+                            </div>
+                            <div class="col-6 d-flex justify-content-end align-items-center">
+                              <span class="state-bill orange me-2">
+                                Estado
+                              </span>
+                              <p class="fs-7 text-state-bill-orange mb-0 d-flex align-items-center">
+                                Pendiente
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content mt-2">
+                          <div>
+                            <span class="text-dates">Fecha: 12/12/2024</span>
+                            <span class="text-dates">Vence: 23/12/2024</span>
+                          </div>
+                          <p class="text-dates">Fecha de envio: 12/12/2024</p>
+                          <div class="row d-flex justify-content-center">
+                            <div class="col-6">
+                              <p class="fs-7 total-money d-flex justify-content-start align-items-center">
+                                Total: 
+                                <span class="bg-dark ms-1 p-1 rounded text-white text-title">
+                                  <img class="img-fluid" src="./assets/coin.svg" alt="coin">
+                                  $99.999.999
+                                </span>
+                              </p>
+                            </div>
+                            <div class="col-6">
+                              <p class="fs-7 total-money d-flex justify-content-start align-items-center">
+                                Días de mora:
+                                <span class="bg-secondary bg-opacity-50 p-1 rounded ms-1">
+                                  99
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="footer">
+                          <div class="row d-flex justify-content-end">
+                            <div class="col-6">
+                              <button class="text-indigo fw-bolder bg-none px-0 border border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#download-bill">
+                                Descargar factura
+                                <img src="./assets/document-download.svg" alt="download">
+                              </button>
+                            </div>
+                            <div class="col-6">
+                              <button class="text-danger fw-bolder bg-none px-0 border border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#no-recognize">
+                                No la reconozco
+                                <img src="./assets/icon-question.svg" alt="download">
+                              </button>
+                            </div>
+                          </div>
+                          <div class="w-100 btn-blue mt-3 d-flex justify-content-center">
+                            <a class="text-white text-decoration-none text-title mx-auto w-100 text-center" href="./payments.html">
+                              Pagar
+                            </a>
+                          </div>
+                        </div>
+                      </div>  
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-6 pb-5">
+                      <div class="border rounded p-3 shadow-sm bg-white">
+                        <div class="header">
+                          <div class="row d-flex justify-content-center align-items-center">
+                            <div class="col-6">
+                              <p class="tag-serie text-break text-center mb-0">
+                                Doc# WEB-440000856
+                              </p>
+                            </div>
+                            <div class="col-6 d-flex justify-content-end align-items-center">
+                              <span class="state-bill green me-2">
+                                Estado
+                              </span>
+                              <p class="fs-7 text-state-bill-green mb-0 d-flex align-items-center">
+                                Paga
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content mt-2">
+                          <div>
+                            <span class="text-dates">Fecha: 12/12/2024</span>
+                            <span class="text-dates">Vence: 23/12/2024</span>
+                          </div>
+                          <p class="text-dates">Fecha de envio: 12/12/2024</p>
+                          <div class="row d-flex justify-content-center">
+                            <div class="col-6">
+                              <p class="fs-7 total-money d-flex justify-content-start align-items-center">
+                                Total: 
+                                <span class="bg-dark ms-1 p-1 rounded text-white text-title">
+                                  <img class="img-fluid" src="./assets/coin.svg" alt="coin">
+                                  $99.999.999
+                                </span>
+                              </p>
+                            </div>
+                            <div class="col-6">
+                              <p class="fs-7 total-money d-flex justify-content-start align-items-center">
+                                Días de mora:
+                                <span class="bg-secondary bg-opacity-50 p-1 rounded ms-1">
+                                  99
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="footer">
+                          <div class="row d-flex justify-content-end">
+                            <div class="col-6">
+                              <button class="text-indigo fw-bolder bg-none px-0 border border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#download-bill">
+                                Descargar factura
+                                <img src="./assets/document-download.svg" alt="download">
+                              </button>
+                            </div>
+                            <div class="col-6">
+                              <button class="text-danger fw-bolder bg-none px-0 border border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#no-recognize">
+                                No la reconozco
+                                <img src="./assets/icon-question.svg" alt="download">
+                              </button>
+                            </div>
+                          </div>
+                          <div class="w-100 btn-blue mt-3 d-flex justify-content-center">
+                            <a class="text-white text-decoration-none text-title mx-auto w-100 text-center" href="./payments.html">
+                              Pagar
+                            </a>
+                          </div>
+                        </div>
+                      </div>  
+                    </div>
+                  </div>
+                  <!-- Boton cargar mas -->
+                  <div class="d-flex justify-content-center">
+                    <button class="btn-load-more border-bottom border-3">
+                      Cargar más +
+                    </button>
+                  </div>
+                </div>
+                <!-- Contenido Pedidos -->
+                <div class="tab-pane fade" id="pills-pedidos" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                  <!-- Cards Pedidos -->
+                  <div class="d-flex justify-content-end mb-3">
+                    <button class="text-title bg-none px-0 border border-0 bg-transparent"  data-bs-toggle="modal" data-bs-target="#filtro">
+                      Ordenar por
+                      <img src="./assets/icon-filter.svg" alt="">
+                    </button>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-6 pb-5">
+                      <div class="border rounded bg-white p-3 shadow-sm">
+                        <div class="header">
+                          <div class="row d-flex justify-content-start align-items-center">
+                            <div class="col-12 col-md-6">
+                              <p class="tag-serie text-break text-center mb-0">
+                                Doc# WEB-440000856
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content mt-2">
+                          <p class="text-dates">
+                            Fecha de envio: 12/12/2024
+                          </p>
+                          <div class="row d-flex justify-content-start">
+                            <div class="col-12 col-md-6">
+                              <p class="fs-7 d-flex justify-content-start align-items-center">
+                                Total: 
+                                <span class="bg-dark ms-1 p-1 rounded text-white text-title">
+                                  <img class="img-fluid" src="./assets/coin.svg" alt="coin">
+                                  $99.999.999
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="footer">
+                          <div class="row d-flex justify-content-end">
+                            <div class="col-6">
+                              <button class="text-indigo fw-bolder bg-none px-0 border border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#download-bill">
+                                Descargar factura
+                                <img src="./assets/document-download.svg" alt="download">
+                              </button>
+                            </div>
+                            <div class="col-6">
+                              <button class="text-danger fw-bolder bg-none px-0 border border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#no-recognize">
+                                No la reconozco
+                                <img src="./assets/icon-question.svg" alt="download">
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>  
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-6 pb-5">
+                      <div class="border rounded bg-white p-3 shadow-sm">
+                        <div class="header">
+                          <div class="row d-flex justify-content-start align-items-center">
+                            <div class="col-12 col-md-6">
+                              <p class="tag-serie text-break text-center mb-0">
+                                Doc# WEB-440000856
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content mt-2">
+                          <p class="text-dates">
+                            Fecha de envio: 12/12/2024
+                          </p>
+                          <div class="row d-flex justify-content-start">
+                            <div class="col-12 col-md-6">
+                              <p class="fs-7 d-flex justify-content-start align-items-center">
+                                Total: 
+                                <span class="bg-dark ms-1 p-1 rounded text-white text-title">
+                                  <img class="img-fluid" src="./assets/coin.svg" alt="coin">
+                                  $99.999.999
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="footer">
+                          <div class="row d-flex justify-content-end">
+                            <div class="col-6">
+                              <button class="text-indigo fw-bolder bg-none px-0 border border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#download-bill">
+                                Descargar factura
+                                <img src="./assets/document-download.svg" alt="download">
+                              </button>
+                            </div>
+                            <div class="col-6">
+                              <button class="text-danger fw-bolder bg-none px-0 border border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#no-recognize">
+                                No la reconozco
+                                <img src="./assets/icon-question.svg" alt="download">
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>  
+                    </div>
+                  </div>
+                  <!-- Boton cargar mas -->
+                  <div class="d-flex justify-content-center">
+                    <button class="btn-load-more border-bottom border-3">
+                      Cargar más +
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Mensajes Emergentes -->
+        <!-- Mensaje de Ordenar Lista -->
+        <div class="modal fade" id="filtro" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header  border-0">
+                <button type="button" class="btn-close fs-8" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body py-0">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="Radios" id="Radios1" value="option1" checked>
+                  <label class="form-check-label" for="Radios1">
+                    Más antiguas
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="Radios" id="Radios2" value="option2">
+                  <label class="form-check-label" for="Radios2">
+                    Más recientes
+                  </label>
+                </div>  
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="Radios" id="Radios3" value="option3">
+                  <label class="form-check-label" for="Radios3">
+                    Menor a mayor valor
+                  </label>
+                </div>                        
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="Radios" id="Radios4" value="option4">
+                  <label class="form-check-label" for="Radios4">
+                    Mayor a menor valor
+                  </label>
+                </div>  
+              </div>
+              <div class="modal-footer  border-0">
+                <button type="button" class="btn-blue w-100">Aplicar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Mensaje Descargar Factura -->
+        <div class="modal fade" id="download-bill" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header  border-0">
+                <button type="button" class="btn-close fs-8" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body py-0">
+                <div class="d-flex justify-content-center mb-3">
+                  <img class="img-fluid" src="./assets/message-question.svg" alt="question">
+                </div>
+                <h6 class="text-title text-center mb-3">
+                  ¿Cómo quieres ver tu factura?
+                </h6>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="Radios" id="pdf" value="option1" checked>
+                  <label class="form-check-label" for="pdf">
+                    Más antiguas
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="Radios" id="correo" value="option2">
+                  <label class="form-check-label" for="correo">
+                    Más recientes
+                  </label>
+                </div>  
+              </div>
+              <div class="modal-footer  border-0">
+                <button type="button" class="btn-blue w-100">Aceptar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Mensaje No Reconozco  -->
+        <div class="modal fade" id="no-recognize" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header  border-0">
+                <button type="button" class="btn-close fs-8" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body py-0">
+                <div class="d-flex justify-content-center mb-3">
+                  <img class="img-fluid" src="./assets/message-question-red.svg" alt="question">
+                </div>
+                <h6 class="text-title text-center mb-3">
+                  No la reconozco, porque:
+                </h6>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="Radios" id="radios1-no-recognize" value="option1" checked>
+                  <label class="form-check-label" for="radios1-no-recognize">
+                    Ya pagué esta factura
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="Radios" id="radios2-no-recognize" value="option2">
+                  <label class="form-check-label" for="radios2-no-recognize">
+                    No realicé el pedido
+                  </label>
+                </div>  
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="Radios" id="radios3-no-recognize" value="option3">
+                  <label class="form-check-label" for="radios3-no-recognize">
+                    No recibí el producto
+                  </label>
+                </div>     
+              </div>
+              <div class="modal-footer  border-0">
+                <button type="button" class="btn-blue w-100">Aceptar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Mensaje Solicitar Estado de Cuenta -->
+        <div class="modal fade" id="estado-cuenta" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header  border-0">
+                <button type="button" class="btn-close fs-8" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body py-0">
+                <div class="d-flex justify-content-center mb-3">
+                  <img class="img-fluid" src="./assets/message-question.svg" alt="question">
+                </div>
+                <h6 class="text-title text-center mb-3">
+                  Solicitar
+                </h6>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="Radios" id="estado-de-cuenta" value="option1" checked>
+                  <label class="form-check-label" for="estado-de-cuenta">
+                    Estado de cuenta
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="Radios" id="referencia-comercial" value="option2">
+                  <label class="form-check-label" for="referencia-comercial">
+                    Referencia comercial
+                  </label>
+                </div>  
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="Radios" id="paz-salvo" value="option3">
+                  <label class="form-check-label" for="paz-salvo">
+                    Paz y salvo
+                  </label>
+                </div>     
+                <div class="box-form my-4">
+                  <label class="label-form bg-white">
+                    Correo electrónico
+                  </label>
+                  <div class="input-form my-3 w-100">
+                    <input 
+                    type="email"
+                    placeholder="ejemplo@ejemplo.com">
+                  </div>
+                </div>	
+              </div>
+              <div class="modal-footer  border-0">
+                <button type="button" class="btn-blue w-100">Aceptar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>
