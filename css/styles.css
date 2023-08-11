@@ -70,6 +70,10 @@ body {
     font-family: 'gothamlight';
 }
 
+.bg-indigo{
+  background-color: #204f9a;
+}
+
 /* Estilos Tabs - Pestañas - Pedidos */
 
 .nav-pills .nav-link.active  {
