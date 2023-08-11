@@ -129,7 +129,7 @@
                           </div>
                           <p class="text-dates">Fecha de envio: 12/12/2024</p>
                           <div class="row d-flex justify-content-center">
-                            <div class="col-6">
+                            <div class="col-7">
                               <p class="fs-7 total-money d-flex justify-content-start align-items-center">
                                 Total: 
                                 <span class="bg-dark ms-1 p-1 rounded text-white text-title">
@@ -138,7 +138,7 @@
                                 </span>
                               </p>
                             </div>
-                            <div class="col-6">
+                            <div class="col-5">
                               <p class="fs-7 total-money d-flex justify-content-start align-items-center">
                                 Días de mora:
                                 <span class="bg-secondary bg-opacity-50 p-1 rounded ms-1">
@@ -197,7 +197,7 @@
                           </div>
                           <p class="text-dates">Fecha de envio: 12/12/2024</p>
                           <div class="row d-flex justify-content-center">
-                            <div class="col-6">
+                            <div class="col-7">
                               <p class="fs-7 total-money d-flex justify-content-start align-items-center">
                                 Total: 
                                 <span class="bg-dark ms-1 p-1 rounded text-white text-title">
@@ -206,7 +206,7 @@
                                 </span>
                               </p>
                             </div>
-                            <div class="col-6">
+                            <div class="col-5">
                               <p class="fs-7 total-money d-flex justify-content-start align-items-center">
                                 Días de mora:
                                 <span class="bg-secondary bg-opacity-50 p-1 rounded ms-1">
@@ -273,7 +273,7 @@
                             Fecha de envio: 12/12/2024
                           </p>
                           <div class="row d-flex justify-content-start">
-                            <div class="col-12 col-md-6">
+                            <div class="col-12 col-md-7">
                               <p class="fs-7 d-flex justify-content-start align-items-center">
                                 Total: 
                                 <span class="bg-dark ms-1 p-1 rounded text-white text-title">
@@ -318,7 +318,7 @@
                             Fecha de envio: 12/12/2024
                           </p>
                           <div class="row d-flex justify-content-start">
-                            <div class="col-12 col-md-6">
+                            <div class="col-12 col-md-7">
                               <p class="fs-7 d-flex justify-content-start align-items-center">
                                 Total: 
                                 <span class="bg-dark ms-1 p-1 rounded text-white text-title">
@@ -466,7 +466,56 @@
                 </div>     
               </div>
               <div class="modal-footer  border-0">
-                <button type="button" class="btn-blue w-100">Aceptar</button>
+                <button type="button" class="btn-blue w-100" data-bs-toggle="modal" data-bs-target="#msj-legal">Aceptar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Segundo Modal No lo Reconozco -->
+        <div class="modal fade" id="msj-legal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header  border-0">
+                <button type="button" class="btn-close fs-8" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body py-0">
+                <h6 class="text-title text-indigo mb-3">
+                  BAT procederá a realizar validación de la causal indicada mediante el aplicativo.
+                </h6>
+                <p class="text-break">
+                  BAT precisa que el uso de la herramienta “no la reconozco” no tiene efecto de rechazo o no aceptación de la factura en los términos de los artículos 773 del Código de Comercio y el artículo 2.2.2.5.4 del decreto 1074 de 2015. Ante cualquier consulta, no dude en contactarnos al 018000-122040
+                </p>    
+              </div>
+              <div class="modal-footer border-0 d-flex justify-content-center">
+                <div class="row d-flex justify-content-center w-100">
+                  <div class="col-6 px-1">
+                    <button type="button" class="btn-blue w-100 " data-bs-toggle="modal" data-bs-target="#aceptar-no-lo-reconozco">Aceptar y enviar</button>
+                  </div>
+                  <div class="col-6 px-1">
+                    <button type="button" class="btn-light-blue w-100 fs-7" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Tercer Modal No lo Reconozco -->
+        <div class="modal fade" id="aceptar-no-lo-reconozco" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header  border-0">
+                <button type="button" class="btn-close fs-8" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body py-0">
+                <div class="d-flex justify-content-center mb-3">
+                  <img class="img-fluid" src="./assets/tick-circle.svg" alt="question">
+                </div>
+                <h6 class="text-title text-center mb-3">
+                  Su solicitud tendrá un tiempo de respuesta de 3 días hábiles.
+                </h6>
+              </div>
+              <div class="modal-footer  border-0">
+                <button type="button" class="btn-blue w-100" data-bs-dismiss="modal" aria-label="Close">Aceptar</button>
               </div>
             </div>
           </div>
@@ -515,7 +564,31 @@
                 </div>	
               </div>
               <div class="modal-footer  border-0">
-                <button type="button" class="btn-blue w-100">Aceptar</button>
+                <button type="button" class="btn-blue w-100" data-bs-toggle="modal" data-bs-target="#aceptar-estado-cuenta">Aceptar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Segundo Modal Estado de Cuenta -->
+        <div class="modal fade" id="aceptar-estado-cuenta" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header  border-0">
+                <button type="button" class="btn-close fs-8" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body py-0">
+                <div class="d-flex justify-content-center mb-3">
+                  <img class="img-fluid" src="./assets/tick-circle.svg" alt="question">
+                </div>
+                <h6 class="text-title text-center mb-3">
+                  Su solicitud tendrá un tiempo de respuesta de 3 días hábiles.
+                </h6>
+                <h6 class="text-center mb-3">
+                  Revise su bandeja de correo electrónico incluyendo el apartado de Spam.
+                </h6>
+              </div>
+              <div class="modal-footer  border-0">
+                <button type="button" class="btn-blue w-100" data-bs-dismiss="modal" aria-label="Close">Aceptar</button>
               </div>
             </div>
           </div>
